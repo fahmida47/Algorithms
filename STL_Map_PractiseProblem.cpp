@@ -114,6 +114,48 @@ int main()
     }
 }
 
+Topic- 6
+//--------------------------------------------erase()--------------------------//
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    map<int,string>mp;
+    mp.insert ({47,"Nadia"});
+    mp.insert ({74,"Afrin"});
+    mp.insert ({4774,"Fahmida"});
+
+    mp.erase(47);
+    for(auto it:mp)
+    {
+        cout<<it.first<<" -> "<<it.second<<endl;
+    }
+}
+
+Topic- 7
+//---------------------------------------clear()--------------------//
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    map<int,string>mp;
+    mp.insert ({47,"Nadia"});
+    mp.insert ({74,"Afrin"});
+    mp.insert ({4774,"Fahmida"});
+
+    mp.clear();// eta clear kore dibe shob key,value--->so,porobortite empty show krbe
+    if (mp.empty( ))cout<<" Show Empty "<<endl;
+    else cout<<" Not Show Empty " <<endl;
+
+    for(auto it:mp)
+    {
+        cout<<it.first<<" -> "<<it.second<<endl;
+    }
+}
+
+
 //--------------------------------------------------------Pass / Fail list---------------------------------------------//
 #include <bits/stdc++.h>
 using namespace std;
@@ -205,6 +247,7 @@ int main() {
     else
         cout << "Student not found";
 }
+
 
 
 
