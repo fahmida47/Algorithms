@@ -1,64 +1,117 @@
-//-----------------------------------------------------------------Simple key-value store----------------------------------------------//
-#include <bits/stdc++.h>
+////Topic////
+
+1. Map Declaration
+2. insert( )
+3. size( ) and max_size( )
+4. begin( ),end( )
+5. empty( )
+6. erase( )
+7. clear( )
+8. count( )
+9. find( )
+10. swap( )
+11. Upper_bound( )
+12. Lower_bound( )
+
+//-----------------------------Now START Code ----------------------------------//
+
+Topic-1
+//-------------------------------------Map-Declaration---------------------------//
+#include<bits/stdc++.h>
 using namespace std;
 
-int main() {
-    map<int,string> mp;
+int main()
+{
+    map<int ,string>mp;
 
-    // insert
-    mp[1] = "apple";
-    mp[2] = "banana";
-    mp[3] = "cherry";
-
-    // print
-    for(auto p : mp){
-        cout << p.first << " -> " << p.second << endl;
+    //mp[key]="Value";
+    mp[47]="Nadia";
+    for (auto it:mp)
+    {
+        cout<<it.first<<" -> "<<it.second<<endl;
     }
 }
 
-//---------------------------------------------------------Access a value by key------------------------------------------------//
-#include <bits/stdc++.h>
+Topic- 2
+//--------------------------------Insert()------------------------------//
+#include<bits/stdc++.h>
 using namespace std;
 
-int main() {
-    map<int,string> mp;
-    mp[10] = "cat";
-    mp[20] = "dog";
+int main()
+{
+    map<int,string>mp;
+    mp.insert ({47,"Nadia"});
+    mp.insert ({74,"Afrin"});
+    mp.insert ({4774,"Fahmida"});
 
-    int key;
-    cin >> key;
-
-    cout << mp[key] << endl; // if key exists, print value
-}
-
-//-----------------------------------------------------------Iterators (basic)-------------------------------------------------------//
-#include <bits/stdc++.h>
-using namespace std;
-
-int main() {
-    map<int,string> mp;
-    mp[1] = "x";
-    mp[2] = "y";
-
-    for(auto it = mp.begin(); it != mp.end(); it++){
-        cout << it->first << " : " << it->second << endl;
+    for(auto it:mp)
+    {
+        cout<<it.first<<" -> "<<it.second<<endl;
     }
 }
 
-//-----------------------------------------------------Delete a key-------------------------------------------//
-#include <bits/stdc++.h>
+Topic- 3
+//---------------------------------------size() and max_size()--------------------//
+#include<bits/stdc++.h>
 using namespace std;
 
-int main() {
-    map<int,string> mp;
-    mp[1] = "a";
-    mp[2] = "b";
-    mp[3] = "c";
+int main()
+{
+    map<int,string>mp;
+    mp.insert ({47,"Nadia"});
+    mp.insert ({74,"Afrin"});
+    mp.insert ({4774,"Fahmida"});
 
-    mp.erase(2); // delete key 2
+    cout<<mp.size()<<endl;
+    cout<<mp.max_size()<<endl;
 
-    for(auto p : mp)
-        cout << p.first << " -> " << p.second << endl;
+
+    for(auto it:mp)
+    {
+        cout<<it.first<<" -> "<<it.second<<endl;
+    }
+}
+
+Topic- 4
+//-------------------------------------begin() and end()--------------------//
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+
+    map<int,string>mp;
+    mp.insert ({47,"Nadia"});
+    mp.insert ({74,"Afrin"});
+    mp.insert ({4774,"Fahmida"});
+
+    map<int,string>::iterator it;
+
+    for(it=mp.begin();it!=mp.end();it++)
+    {
+        cout<<it->first<<"   "<<it->second<<endl;
+    }
+}
+
+Topic- 5
+//-------------------------------------empty()------------------------//
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    map<int,string>mp;
+    mp.insert ({47,"Nadia"});
+    mp.insert ({74,"Afrin"});
+    mp.insert ({4774,"Fahmida"});
+
+    if (mp.empty( ))cout<<" Show Empty "<<endl;
+    else cout<<" Not Show Empty " <<endl;
+
+    for(auto it:mp)
+    {
+        cout<<it.first<<" -> "<<it.second<<endl;
+    }
 }
 
 //--------------------------------------------------------Pass / Fail list---------------------------------------------//
@@ -152,5 +205,6 @@ int main() {
     else
         cout << "Student not found";
 }
+
 
 
