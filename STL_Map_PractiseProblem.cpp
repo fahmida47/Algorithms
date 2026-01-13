@@ -67,6 +67,7 @@ using namespace std;
 
 int main() {
     int n;
+    cout <<"Enter num: ";
     cin >> n;
 
     map<string,int> mp;
@@ -77,18 +78,27 @@ int main() {
         mp[name] = marks;
     }
 
-    cout << "Pass Students:\n";
+    cout << "        PASS STUDENTS         \n";
+
     for(auto p : mp){
-        if(p.second >= 40)
-            cout << p.first << " -> " << p.second << endl;
+        if(p.second >= 40){
+            cout << "Name  : " << p.first << endl;
+            cout << "Marks : " << p.second << endl;
+        }
     }
 
-    cout << "Fail Students:\n";
+    cout << "        FAIL STUDENTS         \n";
+
     for(auto p : mp){
-        if(p.second < 40)
-            cout << p.first << " -> " << p.second << endl;
+        if(p.second < 40){
+            cout << "Name  : " << p.first << endl;
+            cout << "Marks : " << p.second << endl;
+        }
     }
+
+    return 0;
 }
+
 
 //------------------------------------------------------------Highest marks student--------------------------------------------------------//
 #include <bits/stdc++.h>
@@ -142,4 +152,5 @@ int main() {
     else
         cout << "Student not found";
 }
+
 
