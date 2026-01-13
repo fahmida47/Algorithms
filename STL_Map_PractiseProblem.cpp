@@ -155,6 +155,64 @@ int main()
     }
 }
 
+Topic- 8
+//-------------------------------------count()---------------------------//
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    map<int,string>mp;
+    mp.insert ({47,"Nadia"});
+    mp.insert ({74,"Afrin"});
+    mp.insert ({4774,"Fahmida"});
+
+    int count_map=mp.count(4774);
+    cout<<count_map<<endl;
+}
+
+Topic- 9
+//-------------------------find()------------------------//
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    map<int,string>mp;
+    mp.insert ({47,"Nadia"});
+    mp.insert ({74,"Afrin"});
+    mp.insert ({4774,"Fahmida"});
+
+    auto it= mp.find(74);
+    if (it!=mp.end())cout<<" Found "<<endl;
+    else cout<<" Not Found "<<endl;
+
+}
+
+Topic- 10
+//------------------------------swap()---------------------------------//
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    map<int,string>mp,mp1;
+    mp.insert ({47,"Nadia"});
+    mp.insert ({74,"Afrin"});
+    mp.insert ({4774,"Fahmida"});
+
+    mp1[1]="Aaaaaa";
+    mp1[2]="Bbbbbb";
+    mp1[3]="Cccccc";
+
+    mp.swap(mp1);
+    for(auto it:mp1)
+    {
+        cout<<it.first<<" -> "<<it.second<<endl;
+    }
+}
+
+
 
 //--------------------------------------------------------Pass / Fail list---------------------------------------------//
 #include <bits/stdc++.h>
@@ -247,6 +305,7 @@ int main() {
     else
         cout << "Student not found";
 }
+
 
 
 
