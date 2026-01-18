@@ -1,84 +1,103 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main() {
-    int n, e;
+const int INF = INT_MAX;
+int dist[100];
+int parent[100];
+bool visited[100];
 
+// ---------- Initialize-Single-Source ----------
+void initialize_single_source(int n, int s)
+{
+    for (int i = 0; i < n; i++)
+    {
+        visited[i] = false;
+        dist[i] = INF;
+        parent[i] = -1;
+    }
+    dist[s] = 0;
+}
+
+// ---------- RELAX(u, v, w) ----------
+void relax(int u, int v, int w)
+{
+    if (dist[u] != INF && dist[v] > dist[u] + w)
+    {
+        dist[v] = dist[u] + w;
+        parent[v] = u;
+    }
+}
+
+// ---------- Print Path (NO stack) ----------
+void print_path(int v)
+{
+    if (v == -1) return;
+    print_path(parent[v]);
+    cout << v << " ";
+}
+
+int main()
+{
+    int n, e;
     cout << "Enter number of vertices and edges: ";
     cin >> n >> e;
 
     vector<vector<pair<int,int>>> adj(n);
 
     cout << "Enter graph (u v w):\n";
-    for (int i = 0; i < e; i++) {
+    for (int i = 0; i < e; i++)
+    {
         int u, v, w;
         cin >> u >> v >> w;
         adj[u].push_back({v, w});
-        // For undirected graph, uncomment:
-        // adj[v].push_back({u, w});
+        // adj[v].push_back({u, w}); // undirected
     }
 
     int s;
     cout << "Enter source: ";
     cin >> s;
 
-    vector<int> d(n, INT_MAX);
-    vector<int> parent(n, -1); // To store path
-    vector<bool> visited(n, false);
+    //INITIALIZE-SINGLE-SOURCE
+    initialize_single_source(n, s);
 
-    d[s] = 0;
+    //DIJKSTRA
+    for (int i = 0; i < n; i++)
+    {
+        int u = -1, mn = INF;
 
-    // Dijkstra (array-based)
-    for (int i = 0; i < n; i++) {
-        int u = -1, mn = INT_MAX;
-
-        // Extract-MIN(Q)
-        for (int j = 0; j < n; j++) {
-            if (!visited[j] && d[j] < mn) {
-                mn = d[j];
+        // EXTRACT-MIN(Q)
+        for (int j = 0; j < n; j++)
+        {
+            if (!visited[j] && dist[j] < mn)
+            {
+                mn = dist[j];
                 u = j;
             }
         }
 
         if (u == -1) break;
 
-        visited[u] = true;
+        visited[u] = true; // S ← S ∪ {u}
 
-        // Relax all adjacent vertices
-        for (auto edge : adj[u]) {
-            int v = edge.first;
-            int w = edge.second;
-
-            if (d[u] != INT_MAX && d[v] > d[u] + w) {
-                d[v] = d[u] + w;
-                parent[v] = u; // Track parent
-            }
+        // RELAX edges
+        for (auto e : adj[u])
+        {
+            int v = e.first;
+            int w = e.second;
+            relax(u, v, w);
         }
     }
-
-    // Function to print path
-    auto print_path = [&](int v) {
-        if (v == -1) return;
-        stack<int> path;
-        while (v != -1) {
-            path.push(v);
-            v = parent[v];
-        }
-        while (!path.empty()) {
-            cout << path.top();
-            path.pop();
-            if (!path.empty()) cout << " -> ";
-        }
-    };
-
-    // Output
-    cout << "\nVertex   Distance from Source   Path\n";
-    for (int i = 0; i < n; i++) {
-        cout << i << "        ";
-        if (d[i] == INT_MAX) {
+    cout << "\nVertex  Distance  Path\n";
+    for (int i = 0; i < n; i++)
+    {
+        cout << i << "       ";
+        if (dist[i] == INF)
+        {
             cout << "INF\n";
-        } else {
-            cout << d[i] << "                 ";
+        }
+        else
+        {
+            cout << dist[i] << "        ";
             print_path(i);
             cout << "\n";
         }
