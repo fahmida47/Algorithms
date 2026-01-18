@@ -109,8 +109,134 @@ int main()
      cout<<endl;
 
      cout<<v.front()<<endl;
-
 }
+
+Topic- 06
+//---------------------------------------------back()-----------------------------------------//
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+     vector<int>v;
+     v.push_back(1); //v[0];
+     v.push_back(2);//v[1];
+     v.push_back(3);//v[2];
+     v.push_back(4);//v[3];
+     v.push_back(5);//v[4];
+
+     for(int i=0;i<v.size();i++)
+     {
+         cout<<v[i]<<"  ";
+     }
+     cout<<endl;
+
+     cout<<v.back()<<endl;
+}
+
+Topic- 07
+//--------------------------------Clear()---------------------//
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+     vector<int>v;
+     v.push_back(1); //v[0];
+     v.push_back(2);//v[1];
+     v.push_back(3);//v[2];
+     v.push_back(4);//v[3];
+     v.push_back(5);//v[4];
+
+     for(int i=0;i<v.size();i++)
+     {
+         cout<<v[i]<<"  ";
+     }
+     cout<<endl;
+     cout<<"Before clear"<<endl;
+     cout<<v.size()<<endl;
+     //Clear()
+     v.clear();
+     cout<<" After clear "<<endl;
+     cout<<v.size()<<endl;
+}
+
+Topic- 08
+//----------------------------------------------------------Empty()-------------------------------------------------//
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+     vector<int>v;
+     v.push_back(1); //v[0];
+     v.push_back(2);//v[1];
+     v.push_back(3);//v[2];
+     v.push_back(4);//v[3];
+     v.push_back(5);//v[4];
+
+     for(int i=0;i<v.size();i++)
+     {
+         cout<<v[i]<<"  ";
+     }
+     cout<<endl;
+     //jodi clear() func use korle porobortite empty show kobe
+     if (v.empty())cout<<"Empty"<<endl;
+     else cout<<"Not empty"<<endl;
+}
+
+Topic- 09
+//--------------------------------------------------------pop_back()---------------------------------------------------//
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+     vector<int>v;
+     v.push_back(1); //v[0];
+     v.push_back(2);//v[1];
+     v.push_back(3);//v[2];
+     v.push_back(4);//v[3];
+     v.push_back(5);//v[4];
+
+     for(int i=0;i<v.size();i++)
+     {
+         cout<<v[i]<<"  ";
+     }
+     cout<<endl;
+
+      v.pop_back();//vector er shesh er function delete hoye jabe
+     for(int i=0;i<v.size();i++)
+      {
+          cout<<v[i]<<"  ";
+      }
+}
+
+Topic- 10
+//----------------------------------------Erase()----------------------------------------//
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+     vector<int>v;
+     v.push_back(1); //v[0];
+     v.push_back(2);//v[1];
+     v.push_back(3);//v[2];
+     v.push_back(4);//v[3];
+     v.push_back(5);//v[4];
+
+     for(int i=0;i<v.size();i++)
+     {
+         cout<<v[i]<<"  ";
+     }
+     cout<<endl;
+     // jekono jaygay theke delete kora jabe
+     //v.erase(v.begin()+1);
+     //v.erase(v.begin()+2);
+     v.erase(v.begin()+2,v.end());
+     for(int i=0;i<v.size();i++)
+     {
+         cout<<v[i]<<"  ";
+     }
+}
+
+
 
 
 
