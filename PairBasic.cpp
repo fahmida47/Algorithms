@@ -1,15 +1,15 @@
-//Topics
-//1. Pair Declaration
-//2. Hoe to push or insert value in pair
-//3. Swap()
-//4. '=='
-//5. '!='
-//6. '>='
-//7. '<='
+Topics
+1. Pair Declaration
+2. Hoe to push or insert value in pair
+3. Swap()
+4. '=='
+5. '!='
+6. '>='
+7. '<='
 
-///Topic- 01 & 02
+Topic- 01 & 02
 //---------------------------------------Pair Declaration & how to push-----------------------------------//
-/*#include<bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 int main()
 {
@@ -21,11 +21,11 @@ int main()
     //p.second='N'; //Character push
 
     cout<<p.first<<"  "<<p.second<<endl;
-}*/
+}
 
-///Topic- 03
+Topic- 03
 //----------------------------------------Swap()----------------------------//
-/*#include<bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 int main()
 {
@@ -36,11 +36,11 @@ int main()
 
     cout<<"P2 print: "<<endl;
     cout<<p2.first<<"  "<<p2.second<<endl;
-}*/
+}
 
-///Topic- 04
+Topic- 04
 //---------------------------------'=='-------------------------------------------//
-/*#include<bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 int main()
 {
@@ -49,11 +49,11 @@ int main()
 
     if (p1==p2)cout<<"YES"<<endl;
     else cout<<"NO"<<endl;
-}*/
+}
 
-///Topic- 05
+Topic- 05
 //-----------------------------'!='-------------------------------------------------//
-/*#include<bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 int main()
 {
@@ -62,11 +62,11 @@ int main()
 
     if (p1!=p2)cout<<"YES"<<endl;
     else cout<<"NO"<<endl;
-}*/
+}
 
-///Topic- 06
+Topic- 06
 //--------------------------------------'>='----------------------------------------------//
-/*#include<bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 int main()
 {
@@ -75,9 +75,9 @@ int main()
 
     if (p1>=p2)cout<<"YES"<<endl;
     else cout<<"NO"<<endl;
-}*/
+}
 
-///Topic- 07
+Topic- 07
 //--------------------------------------'<='---------------------------------------------//
 #include<bits/stdc++.h>
 using namespace std;
@@ -89,3 +89,4 @@ int main()
     if (p1<=p2)cout<<"YES"<<endl;
     else cout<<"NO"<<endl;
 }
+
