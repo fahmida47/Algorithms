@@ -236,6 +236,171 @@ int main()
      }
 }
 
+Topic- 11
+//---------------------------------------------------Insert()--------------------------------//
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    vector<int>v;
+    v.push_back(10);
+    v.push_back(20);
+    v.push_back(30);
+    v.push_back(40);
+    v.push_back(50);
+
+    for(int i=0;i<v.size();i++)
+    {
+        cout<<v[i]<<"  ";
+    }
+    cout<<endl;
+
+    //v.insert(v.begin(),1);
+    //v.insert(v.begin()+1,1);
+    //v.insert(v.begin(),3,1); // shurute 3ta '1' add korbo
+       v.insert(v.begin()+2,3,1);
+    for(int i=0;i<v.size();i++)
+    {
+        cout<<v[i]<<"  ";
+    }
+    cout<<endl;
+}
+
+Topic- 12
+//---------------------------------------------------Swap()--------------------------------//
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    vector<int>v1;
+    v1.push_back(10);
+    v1.push_back(20);
+    v1.push_back(30);
+
+    vector<int>v2;
+    v2.push_back(1);
+    v2.push_back(2);
+    v2.push_back(3);
+
+    cout<<"Before Swap "<<endl;
+    for(int i=0;i<v1.size();i++)
+    {
+        cout<<v1[i]<<"  ";
+    }
+    cout<<endl;
+    for(int i=0;i<v2.size();i++)
+    {
+        cout<<v2[i]<<"  ";
+    }
+    cout<<endl;
+
+    swap(v1,v2);
+
+    cout<<"After Swapping"<<endl;
+    for(int i=0;i<v1.size();i++)
+    {
+        cout<<v1[i]<<"  ";
+    }
+    cout<<endl;
+    for(int i=0;i<v2.size();i++)
+    {
+        cout<<v2[i]<<"  ";
+    }
+    cout<<endl;
+}
+
+Topic- 13
+//------------------------------------------------------Sort()----------------------------------------------//
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    vector<int>v1;
+    v1.push_back(110);
+    v1.push_back(30);
+    v1.push_back(47);
+    v1.push_back(114);
+    v1.push_back(9);
+
+    cout<<"Before Sorting "<<endl;
+    for(int i=0;i<v1.size();i++)
+    {
+        cout<<v1[i]<<"  ";
+    }
+    cout<<endl;
+
+    sort(v1.begin(),v1.end()); // increasing order e sort hobe 
+
+    cout<<"After Sorting"<<endl;
+    for(int i=0;i<v1.size();i++)
+    {
+        cout<<v1[i]<<"  ";
+    }
+    cout<<endl;
+}
+
+Topic- 14
+//----------------------------------------------Reverse()----------------------------------------//
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    vector<int>v1;
+    v1.push_back(110);
+    v1.push_back(30);
+    v1.push_back(47);
+    v1.push_back(114);
+    v1.push_back(9);
+
+    cout<<"Before Reverse "<<endl;
+    for(int i=0;i<v1.size();i++)
+    {
+        cout<<v1[i]<<"  ";
+    }
+    cout<<endl;
+
+    reverse(v1.begin(),v1.end()); // increasing order e sort hobe
+
+    cout<<"After Reverse"<<endl;
+    for(int i=0;i<v1.size();i++)
+    {
+        cout<<v1[i]<<"  ";
+    }
+    cout<<endl;
+}
+
+Topic- 15
+//Iteration=>Time complexity komay
+//------------------------------------------------------Iteration------------------------------------------------//
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    vector<int>v;
+    v.push_back(1);
+    v.push_back(2);
+    v.push_back(3);
+    v.push_back(4);
+    v.push_back(5);
+
+    vector<int>::iterator it;
+    it=v.begin();
+    //it=begin()+3;
+    //cout<< *it <<endl;
+
+    for(it=v.begin();it!=v.end();it++)
+    {
+        cout<< *it <<endl;
+    }
+}
+
+
+
+
+
+
+
+
 
 
 
