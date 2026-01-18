@@ -1,17 +1,17 @@
-//Topics
-//1. Priority Queue Declaration
-//2. push()
-//3. empty()
-//4. size()
-//5. top()
-//6. pop()
-//7. swap()
-//8. emplace()
-//9. value choto theke boro print
+Topics
+1. Priority Queue Declaration
+2. push()
+3. empty()
+4. size()
+5. top()
+6. pop()
+7. swap()
+8. emplace()
+9. value choto theke boro print
 
-///Topic- 01 & 02 & 03
+Topic- 01 & 02 & 03
 //---------------------------Priority queue Declaration & push() & empty()----------------------------//
-/*#include<bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 int main()
 {
@@ -25,11 +25,11 @@ int main()
 
     if (pq.empty())cout<<"Empty"<<endl;
     else cout<<"Not Empty"<<endl;
-}*/
+}
 
-///Topic- 04
+Topic- 04
 //-------------------------------------------size()-----------------------------------------//
-/*#include<bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 int main()
 {
@@ -42,11 +42,11 @@ int main()
     pq.push(49);
 
     cout<<pq.size()<<endl;
-}*/
+}
 
-///Topic- 05
+Topic- 05
 //------------------------------top()--------------------------//
-/*#include<bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 int main()
 {
@@ -59,11 +59,11 @@ int main()
     pq.push(49);
 
     cout<<pq.top()<<endl; //Default large value print korbe
-}*/
+}
 
-///Topic- 06
+Topic- 06
 //-------------------------------pop()-----------------------------------//
-/*#include<bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 int main()
 {
@@ -83,11 +83,11 @@ int main()
         cout<<pq.top()<<endl;
         pq.pop();
     }
-}*/
+}
 
-///Topic- 07
+Topic- 07
 //---------------------------------------swap()----------------------------------------//
-/*#include<bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 int main()
 {
@@ -111,13 +111,13 @@ int main()
         cout<<pq1.top()<<endl;
         pq1.pop();
     }
-}*/
+}
 
-///Topic- 08
+Topic- 08
 //------------------------------------------------emplace()---------------------------------//
 //emplace() function ar push() function same
 
-///Topic- 09
+Topic- 09
 //-----------------------------------------Value choto theke boro-----------------------------//
 #include<bits/stdc++.h>
 using namespace std;
@@ -135,3 +135,4 @@ int main()
         pq.pop();
     }
 }
+
