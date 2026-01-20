@@ -53,3 +53,77 @@ int main()
     return 0;
 }
 
+
+
+
+Ques-01==========>All Topological Sort
+#include <bits/stdc++.h>
+using namespace std;
+
+vector<int> path;
+
+void alltoposort(vector<vector<int>>& adj,
+                 vector<int>& indegree,
+                 vector<bool>& visited,
+                 int n)
+{
+    bool found = false;
+
+    for (int i = 0; i < n; i++)
+    {
+        if (indegree[i] == 0 && !visited[i])
+        {
+            visited[i] = true;
+            path.push_back(i);
+
+            for (int v : adj[i])
+                indegree[v]--;
+
+            alltoposort(adj, indegree, visited, n);
+
+            visited[i] = false;
+            path.pop_back();
+
+            for (int v : adj[i])
+                indegree[v]++;
+
+            found = true;
+        }
+    }
+
+    if (!found)
+    {
+        cout << "Topological Order: ";
+        for (int x : path)
+            cout << x << " ";
+        cout << endl;
+    }
+}
+
+int main()
+{
+    int v, e;
+    cout << "Enter number of nodes and edges: ";
+    cin >> v >> e;
+
+    vector<vector<int>> adj(v);
+    vector<int> indegree(v, 0);
+
+    cout << "Enter " << e << " edges (u v format):" << endl;
+    for (int i = 0; i < e; i++)
+    {
+        int u, w;
+        cin >> u >> w;
+        adj[u].push_back(w);
+        indegree[w]++;
+    }
+
+    cout << "\nAll possible topological orders:\n";
+    vector<bool> visited(v, false);
+
+    alltoposort(adj, indegree, visited, v);
+
+    return 0;
+}
+
+
