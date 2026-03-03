@@ -47,10 +47,16 @@ void printOptimalParens(vector<vector<int>> &s, int i, int j) {
 }
 
 int main() {
-    // Example input
-    vector<int> p = {10, 5, 1, 10, 2, 10};
+    int n;
+    cout << "Enter the number of matrices: ";
+    cin >> n;
 
-    int n = p.size() - 1;
+    vector<int> p(n + 1);
+
+    cout << "Enter the dimensions of the matrices (p0 p1 p2 ... pn): ";
+    for (int i = 0; i <= n; i++) {
+        cin >> p[i];
+    }
 
     // Create DP tables
     vector<vector<int>> m(n + 1, vector<int>(n + 1));
